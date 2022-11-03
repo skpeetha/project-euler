@@ -1,4 +1,4 @@
-
+# sum of all multipler of 3 and 5 below given value
 totalnumbers =int(input("Enter limit value:\n"))
 sum  = 0.0
 i = 3
