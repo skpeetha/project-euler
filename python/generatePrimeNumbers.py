@@ -8,6 +8,19 @@ tempN = limitN
 print(tempN)
 
 while i <= limitN:
+    #for p in primes:
+    #    if i%p == 0:
+    #        break
+    #primes = primes + [i]
+    j = 2
+    while j < i:
+        if i%j == 0:
+            break
+        j = j + 1
+    else:
+        primes = primes + [i]
+    i = i + 1
     
 
 print(f'Prime list: {primes}')
+
