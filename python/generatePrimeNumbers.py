@@ -15,6 +15,7 @@ def generate(num):
                 break
             elif p == primes[-1]:
                 primes = primes + [i]
+        i = i + 2
     return(primes)
     #primes = primes + [i]
     #j = 2
@@ -24,7 +25,6 @@ def generate(num):
     #    j = j + 1
     #else:
     #    primes = primes + [i]
-        i = i + 2
 generate(limitN)
 print(f'Prime list: {primes}')
 
