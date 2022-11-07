@@ -1,6 +1,6 @@
-# matrcies p11
+# matrices p11
 numItems = int(input("Enter number of items to used:"))
-matR  = [[8,2,22,97,38,15,0,40,0,75,4,5,7,78,52,12,50,77,91,8],
+mat  = [[8,2,22,97,38,15,0,40,0,75,4,5,7,78,52,12,50,77,91,8],
         [49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48,4,56,62,0],
         [81,49,31,73,55,79,14,29,93,71,40,67,53,88,30,3,49,13,36,65],
         [52,70,95,23,4,60,11,42,69,24,68,56,1,32,56,71,37,2,36,91],
@@ -20,37 +20,38 @@ matR  = [[8,2,22,97,38,15,0,40,0,75,4,5,7,78,52,12,50,77,91,8],
         [20,69,36,41,72,30,23,88,34,62,99,69,82,67,59,85,74,4,36,16],
         [20,73,35,29,78,31,90,1,74,31,49,71,48,86,81,16,23,57,5,54],
         [1,70,54,71,83,51,54,69,16,92,33,48,61,43,52,1,89,19,67,48]]
-
-mat = [[2,2,2,2,3],
-       [2,2,2,2,2],
-       [2,3,2,2,3],
-       [3,2,2,2,3],
-       [2,2,2,2,3]] 
-#this is assuming mat is perfect matrix
+ 
+#this is assuming mat is perfect matrix nxm
 rowLen = len(mat[0])
 colLen = len(mat)
 
 if (numItems > rowLen) | (numItems > colLen ):
-    print(f"Invalid matrix, Exiting")
+    print(f"Invalid length, Exiting")
     quit()
 
 maxProd = 0
-for i in range(0,rowLen+1):
-    for j in range(0, colLen+1):
+for i in range(0,rowLen):
+    for j in range(0, colLen):
         prodR = 1
         prodC = 1
-        prodD = 1
-        prodRD = 1
+        prod0D = 1
+        prod1D = 1
+        prod2D = 1
+        prod3D = 1
         for k in range(0,numItems):
-            if i <= (rowLen - numItems + 1):
-                prodR = prodR * mat[i+k][j]
-            if j < (colLen - numItems + 1):
-                prodC = prodC * mat[i][j+k]
-            if (i <= (rowLen - numItems + 1)) & (j < (colLen - numItems + 1)):
-                prodD = prodD * mat[i+k][j+k]
-            #prodRD  = 
-
-        p = max(prodR,prodC,prodD)
+            if j <= (rowLen - numItems):
+                prodR = prodR * mat[i][j+k]
+            if i <= (colLen - numItems):
+                prodC = prodC * mat[i+k][j]
+            if (j <= (rowLen - numItems)) & (i <= (colLen - numItems)):
+                prod0D = prod0D * mat[i+k][j+k]
+            if (i <= (rowLen - numItems)) & (j >= (numItems-1)):
+                prod1D = prod1D * mat[i+k][j-k]
+            if (j <= (rowLen - numItems)) & (i >= (numItems-1)):
+                prod2D = prod2D * mat[i-k][j+k]
+            if (j >= (numItems-1)) & (i >= (numItems-1)):
+                prod3D  = prod3D*mat[i-k][j-k]
+        p = max(prodR,prodC,prod0D,prod1D,prod2D,prod3D)
         if maxProd < p:
             maxProd = p
 print(maxProd)
