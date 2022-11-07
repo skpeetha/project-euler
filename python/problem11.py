@@ -51,7 +51,5 @@ for i in range(0,rowLen):
                 prod2D = prod2D * mat[i-k][j+k]
             if (j >= (numItems-1)) & (i >= (numItems-1)):
                 prod3D  = prod3D*mat[i-k][j-k]
-        p = max(prodR,prodC,prod0D,prod1D,prod2D,prod3D)
-        if maxProd < p:
-            maxProd = p
+        maxProd = max(maxProd,max(prodR,prodC,prod0D,prod1D,prod2D,prod3D))
 print(maxProd)
