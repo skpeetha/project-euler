@@ -1,14 +1,11 @@
-#Generate prime numbers below a given number
-
+# Sum of prime number below a given number
 
 limitN = int(input("Enter numerical limit value:")) # fails if enetred value is not a number
-print(f"Entered value is {limitN}")
 primes = [2]
 
 
-def generate(num):
+def add_primes(num):
     global primes
-
     for i in range(3,num):
         sqRoot  = i**.5
         for p in primes:
@@ -17,9 +14,8 @@ def generate(num):
             if p >= sqRoot:
                 primes.append(i)
                 break
-    return(primes)
-
-generate(limitN)
-print(f'Prime list: {primes}')
+    return
+add_primes(limitN)
+print(f'Sum of prime numbers: {sum(primes)}')
 
 
