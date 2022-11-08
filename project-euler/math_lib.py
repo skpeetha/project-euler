@@ -8,9 +8,9 @@
 
 def generate_primes(num):
     #global primes
-    primes = [2]
+    primes = []
 
-    for i in range(3,num):
+    for i in range(2,num):
         sqRoot  = i**.5
         for p in primes:
             if i%p == 0:
