@@ -5,10 +5,18 @@
 #print(f"Entered value is {limitN}")
 #primes = [2]
 
+def check_prime(num):
+    primes = generate_primes(int(num**.5))
+    for p in primes:
+        if num%p == 0:
+            return False
+    return True
+
+    
 
 def generate_primes(num):
     #global primes
-    primes = []
+    primes = [2]
 
     for i in range(2,num):
         sqRoot  = i**.5
@@ -23,6 +31,8 @@ def generate_primes(num):
 def generate_primes_range(startR,endR):
     #global primes
     primes_start = generate_primes(startR)
+    if startR - endR == 0:
+        return primes_start
     primes = []
 
     for i in range(startR,endR):

@@ -4,16 +4,17 @@ fact = []
 
 nu = [28,36]
 
-primes = []
+primes = [2]
 
-#print(primes)
-#
+#print(generate_primes_range(5,15))
 
-def get_factors(n):
-    startR = 3
-    if n <= startR:
-        print(f'min start values should be 4')
-        return
+#quit()
+startR = 2
+if nu[0] <= startR:
+    print(f'min start values should be 4')
+    quit()
+
+for n in nu:
     endR = int(n/2 + 1)
     primes = primes + generate_primes_range(startR,endR)
     #2 3 5 7 11 13
@@ -21,14 +22,14 @@ def get_factors(n):
     print(primes)
     for p in primes:
         res = n
+       # print(f'{p}:{type(p)}')
         count = 0
-        print(f'{p}:{type(p)}')
-        
         while res%p == 0:
-            count = count + 1
             res = int(res/p)
+            count = count + 1
             factors.add(p**count)
             factors.add(res)
-
+        if res/p == 1.0:
+            break
     startR = endR
     print(f'divisors of {n}: {factors}')
