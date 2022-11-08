@@ -6,9 +6,7 @@ for a in range(1,1000):
             if (a*a + b*b == c*c) & (a+b+c == 1000):
                 abc = a*b*c
                 print(f'{a}:{b}:{c}')
+                quit()
                 break
-        if abc != 0:
-            break
-    if abc != 0:
-        break
+
 print(f'{abc}')
