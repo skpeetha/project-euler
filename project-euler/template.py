@@ -6,4 +6,4 @@ start_time = time.time()
 limitN = int(input("Enter numerical limit value:")) # fails if enetred value is not a number
 print(f"Entered value is {limitN}")
 
-print(f'Execution duration : {start_time - time.time()}')
+print(f'Execution duration : {time.time() - start_time}')
