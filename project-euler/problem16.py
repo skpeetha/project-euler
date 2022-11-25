@@ -8,6 +8,9 @@ sum_n = 0
 while res//10 != 0:
     sum_n = sum_n + res%10
     res = res//10
-print(sum_n+res)
+print(sum_n+res) 
+
+#one liner
+#sum(int(digit) for digit in str(2**10))
 
 print(f'Execution duration : {time.time() - start_time}')
