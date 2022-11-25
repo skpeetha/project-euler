@@ -5,11 +5,13 @@ start_time = time.time()
 #limitN = int(input("Enter numerical limit value:")) # fails if enetred value is not a number
 #print(f"Entered value is {limitN}")
 
-n = 830000
+lst = list(range(2,10**6))
+
 big_count = 2
-while n < 10**6:
+i = 0
+while i < len(lst):
     count = 2
-    rem = 0
+    n = lst[i]
     it = n
     while it/2 != 1:
         #print(it)
@@ -18,11 +20,15 @@ while n < 10**6:
         else:
             it = 3*it + 1
         count = count + 1
+        #if it in lst:
+            #lst.remove(it)
+    #print(n)
+    #print(lst)
     
     if count > big_count:
         big_count = count
         print(f'Number: {n} Count: {big_count}')
-    n = n + 1
+    i = i + 1
     #quit()
 
 print(f'Execution duration : {time.time() - start_time}')
