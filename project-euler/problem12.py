@@ -2,7 +2,25 @@
 import time
 from math_lib import generate_primes_range
 
+def get_divisors(n):
+    divs = []
+    for i in range(1,int(n**.5)+1):
+        if n%i == 0:
+            divs = divs + [i] + [int(n/i)]
+    return set(divs)
+
 start_time = time.time()
+numb = 1
+d = 0
+best = 0
+#print(f'len:{len(d)} divs: {d}')
+while d < 500:
+    d = len(get_divisors(numb))
+    numb += 1
+    if d > best:
+        best = d
+        print(f'{numb} --> {d}')
+quit()
 i = 3
 n = 6 #sum of first i digits
 

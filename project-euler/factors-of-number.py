@@ -1,5 +1,17 @@
 from math_lib import generate_primes_range
 
+def fact_of_num_crd(n):
+    fact = []
+    for i in range(n**.5):
+        if n%i == 0:
+            fact.append(i)
+    return fact
+
+def fact_of_num(n):
+    fact = []
+
+    return fact
+
 fact = []
 
 nu = [28,36]
@@ -15,7 +27,7 @@ if nu[0] <= startR:
     quit()
 
 for n in nu:
-    endR = int(n/2 + 1)
+    endR = int(n**.5)
     primes = primes + generate_primes_range(startR,endR)
     #2 3 5 7 11 13
     factors = {1,n}
