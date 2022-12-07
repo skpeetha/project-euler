@@ -16,10 +16,10 @@ best = 0
 #print(f'len:{len(d)} divs: {d}')
 while d < 500:
     d = len(get_divisors(numb))
-    numb += 1
     if d > best:
         best = d
         print(f'{numb} --> {d}')
+    numb += 1
 quit()
 i = 3
 n = 6 #sum of first i digits
