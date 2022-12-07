@@ -13,15 +13,22 @@ def get_length(f):
             ind = f.index(s)
             break
     i = ind
-    step = ind
+    #step = ind
+    rep = f[:ind]
+    c = 0
     while i < l:        
-        if f[:i] == f[i:i+step]:
-            return f[:i]
-        else:
-            step += 1
+        if f[:i] == f[i:i+i]:
+            c += 1
+            rep = f[:i]
+        #else:
+        #    step += 1
         i += 1
-        if (i+step > l):
-            return "0"
+        if (i+i > l):
+            break
+    if c != 0:
+        return rep
+    else:
+        return "0"
 
 ma = 0
 for n in range(2,1000):
