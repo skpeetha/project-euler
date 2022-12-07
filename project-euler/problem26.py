@@ -1,5 +1,4 @@
 import time
-from math_lib import generate_primes_range
 
 start_time = time.time()
 
